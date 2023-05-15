@@ -13,4 +13,11 @@ class FactionsAPIsTest {
             assertEquals(7, FactionsAPIs.factions().data.size)
         }
     }
+
+    @Test
+    fun getFaction() {
+        runBlocking {
+            assertEquals("COSMIC", FactionsAPIs.getFaction("COSMIC").data.symbol)
+        }
+    }
 }

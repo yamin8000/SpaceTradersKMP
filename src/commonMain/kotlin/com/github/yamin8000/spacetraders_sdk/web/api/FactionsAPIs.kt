@@ -9,5 +9,9 @@ import io.ktor.client.request.*
 
 object FactionsAPIs {
 
-    suspend fun factions(): SpaceTradersResponse<List<Faction>> = client.get("${BASE_URL}factions").body()
+    private const val FACTIONS = "${BASE_URL}factions"
+
+    suspend fun factions(): SpaceTradersResponse<List<Faction>> = client.get(FACTIONS).body()
+
+    suspend fun getFaction(symbol: String): SpaceTradersResponse<Faction> = client.get("$FACTIONS/$symbol").body()
 }
