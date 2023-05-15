@@ -1,4 +1,4 @@
-package com.github.yamin8000.spacetraders_sdk.model
+package com.github.yamin8000.spacetraders_sdk.model.faction
 
 enum class FactionTraitSymbol {
     BUREAUCRATIC, SECRETIVE, CAPITALISTIC, INDUSTRIOUS, PEACEFUL, DISTRUSTFUL,
