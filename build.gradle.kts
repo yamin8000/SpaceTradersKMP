@@ -1,12 +1,14 @@
 plugins {
     kotlin("multiplatform") version "1.8.20"
+    id("convention.publication")
 }
 
-group = "io.github.yamin8000"
+group = "com.github.yamin8000"
 version = "1.0.0"
 
 repositories {
     mavenCentral()
+    gradlePluginPortal()
 }
 
 kotlin {
