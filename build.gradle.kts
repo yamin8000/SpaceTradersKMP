@@ -15,6 +15,9 @@ kotlin {
     jvm {
         jvmToolchain(17)
         withJava()
+        testRuns["test"].executionTask.configure {
+            useJUnitPlatform()
+        }
     }
     js(IR) {
         browser {
@@ -39,14 +42,23 @@ kotlin {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
             }
         }
-        val commonTest by getting
+        val commonTest by getting {
+            dependencies {
+                implementation(kotlin("test"))
+            }
+        }
         val jvmMain by getting {
             dependsOn(commonMain)
             dependencies {
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
             }
         }
-        val jvmTest by getting
+        val jvmTest by getting {
+            dependsOn(jvmMain)
+            dependencies {
+                implementation("org.junit.jupiter:junit-jupiter:5.9.3")
+            }
+        }
         val jsMain by getting
         val jsTest by getting
         val nativeMain by getting
