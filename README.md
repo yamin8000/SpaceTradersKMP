@@ -1,2 +1,3 @@
 # SpaceTradersKMP
-SpaceTraders API wrapper for Kotlin Multiplatform
+
+SpaceTradersKMP is a API wrapper for SpaceTraders game in Kotlin Multiplatform.
