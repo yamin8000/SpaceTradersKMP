@@ -15,7 +15,10 @@ object Utility {
 
     suspend fun HttpClient.get(url: Url, token: String) = authorizedRequest(url, HttpMethod.Get, token)
 
+    suspend fun HttpClient.get(urlString: String, token: String) = get(Url(urlString), token)
+
     suspend fun HttpClient.post(url: Url, token: String) = authorizedRequest(url, HttpMethod.Post, token)
+    suspend fun HttpClient.post(urlString: String, token: String) = post(Url(urlString), token)
 
     suspend fun HttpClient.authorizedRequest(
         url: Url,
@@ -23,7 +26,7 @@ object Utility {
         token: String,
         block: HttpRequestBuilder.() -> Unit = {
             this.method = method
-            headers { append(HttpHeaders.Authorization, "${Constants.BEARER} $token") }
+            bearerAuth(token)
         }
     ) = request(url, block)
 }

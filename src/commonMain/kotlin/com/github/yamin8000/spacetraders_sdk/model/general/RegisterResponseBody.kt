@@ -6,8 +6,8 @@ import com.github.yamin8000.spacetraders_sdk.model.ship.Ship
 import com.github.yamin8000.spacetraders_sdk.model.faction.Faction
 
 data class RegisterResponseBody(
-    val data: SpaceTradersResponse<RegisterResponseInternalBody>,
-    val meta: SpaceTradersResponseMeta
+    val data: ApiResponse<RegisterResponseInternalBody>,
+    val meta: ApiResponseMeta
 )
 
 data class RegisterResponseInternalBody(
