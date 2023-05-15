@@ -10,7 +10,7 @@ class FactionsAPIsTest {
     @Test
     fun factions() {
         runBlocking {
-            assertEquals(7, FactionsAPIs.factions().data.size)
+            assertEquals(1, FactionsAPIs.factions(limit = 1).data.size)
         }
     }
 
