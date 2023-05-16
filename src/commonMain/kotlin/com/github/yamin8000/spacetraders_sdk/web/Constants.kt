@@ -7,6 +7,8 @@ internal object Constants {
 
     object QueryParameter {
         const val LIMIT = "limit"
+        const val LIMIT_DEFAULT = 20
         const val PAGE = "page"
+        const val PAGE_DEFAULT = 1
     }
 }

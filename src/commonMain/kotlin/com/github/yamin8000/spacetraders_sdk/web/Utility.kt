@@ -7,6 +7,7 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 
 object Utility {
+
     internal val client = HttpClient {
         install(ContentNegotiation) {
             json()
@@ -29,4 +30,13 @@ object Utility {
             bearerAuth(token)
         }
     ) = request(url, block)
+
+    internal fun HttpRequestBuilder.pagingRequest(
+        limit: Int = Constants.QueryParameter.LIMIT_DEFAULT,
+        page: Int = Constants.QueryParameter.PAGE_DEFAULT
+    ): HttpRequestBuilder {
+        parameter(Constants.QueryParameter.LIMIT, limit)
+        parameter(Constants.QueryParameter.PAGE, page)
+        return this
+    }
 }
