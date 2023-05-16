@@ -5,12 +5,7 @@ import com.github.yamin8000.spacetraders_sdk.model.Contract
 import com.github.yamin8000.spacetraders_sdk.model.ship.Ship
 import com.github.yamin8000.spacetraders_sdk.model.faction.Faction
 
-data class RegisterResponseBody(
-    val data: ApiResponse<RegisterResponseInternalBody>,
-    val meta: ApiResponseMeta
-)
-
-data class RegisterResponseInternalBody(
+data class RegisterResponse(
     val agent: Agent,
     val contract: Contract,
     val faction: Faction,

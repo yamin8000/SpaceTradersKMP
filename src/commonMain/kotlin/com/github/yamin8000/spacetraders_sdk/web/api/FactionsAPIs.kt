@@ -1,22 +1,20 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
 import com.github.yamin8000.spacetraders_sdk.model.faction.Faction
-import com.github.yamin8000.spacetraders_sdk.model.general.ApiResponse
 import com.github.yamin8000.spacetraders_sdk.web.Constants
 import com.github.yamin8000.spacetraders_sdk.web.Constants.BASE_URL
-import com.github.yamin8000.spacetraders_sdk.web.Utility.client
+import com.github.yamin8000.spacetraders_sdk.web.GameClient
+import com.github.yamin8000.spacetraders_sdk.web.Utility.data
 import com.github.yamin8000.spacetraders_sdk.web.Utility.pagingRequest
-import io.ktor.client.call.*
-import io.ktor.client.request.*
 
 object FactionsAPIs {
 
-    private const val FACTIONS = "${BASE_URL}factions"
+    private const val FACTIONS = "factions"
 
-    suspend fun factions(
+    suspend fun GameClient.factions(
         limit: Int = Constants.QueryParameter.LIMIT_DEFAULT,
         page: Int = Constants.QueryParameter.PAGE_DEFAULT
-    ): ApiResponse<List<Faction>> = client.get(FACTIONS) { pagingRequest(limit, page) }.body()
+    ): List<Faction> = get(FACTIONS) { pagingRequest(limit, page) }.data()
 
-    suspend fun getFaction(symbol: String): ApiResponse<Faction> = client.get("$FACTIONS/$symbol").body()
+    suspend fun GameClient.getFaction(symbol: String): Faction = get("$FACTIONS/$symbol").data()
 }

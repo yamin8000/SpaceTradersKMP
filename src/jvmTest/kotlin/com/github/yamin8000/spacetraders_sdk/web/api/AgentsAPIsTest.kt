@@ -1,17 +1,16 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
+import com.github.yamin8000.spacetraders_sdk.web.api.AgentsAPIs.myAgent
 import kotlinx.coroutines.runBlocking
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-import org.junit.jupiter.api.Assertions.*
-
-class AgentsAPIsTest {
+class AgentsAPIsTest : MainTest() {
 
     @Test
     fun myAgent() {
         runBlocking {
-            val token = System.getenv("token")
-            assertEquals("YS2", AgentsAPIs.myAgent(token).data.symbol)
+            assertEquals("YS2", client.myAgent().symbol)
         }
     }
 }
