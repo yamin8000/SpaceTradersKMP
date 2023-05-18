@@ -23,4 +23,5 @@ internal object Utility {
     }
 
     internal suspend inline fun <reified T> HttpResponse.data() = body<ApiResponse<T>>().data
+    internal operator fun String.div(another: String) = "${this}/${another}"
 }

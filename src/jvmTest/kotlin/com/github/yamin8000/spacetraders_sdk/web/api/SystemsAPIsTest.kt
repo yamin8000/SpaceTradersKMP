@@ -1,6 +1,7 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
 import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.getSystem
+import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.getWaypoint
 import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.systems
 import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.waypoints
 import kotlinx.coroutines.runBlocking
@@ -9,6 +10,8 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.Assertions.*
 
 private const val TEST_SYSTEM = "X1-ZA40"
+
+private const val TEST_WAYPOINT = "X1-ZA40-15970B"
 
 class SystemsAPIsTest : MainTest() {
 
@@ -38,6 +41,21 @@ class SystemsAPIsTest : MainTest() {
         runBlocking {
             val system = client.getSystem(TEST_SYSTEM)
             assertEquals(TEST_SYSTEM, client.waypoints(system).map { it.systemSymbol }.find { it == TEST_SYSTEM })
+        }
+    }
+
+    @Test
+    fun getWaypoint() {
+        runBlocking {
+            assertEquals(TEST_SYSTEM, client.getWaypoint(TEST_SYSTEM, TEST_WAYPOINT).systemSymbol)
+        }
+    }
+
+    @Test
+    fun getWaypointWithSystem() {
+        runBlocking {
+            val system = client.getSystem(TEST_SYSTEM)
+            assertEquals(TEST_SYSTEM, client.getWaypoint(system, TEST_WAYPOINT).systemSymbol)
         }
     }
 }
