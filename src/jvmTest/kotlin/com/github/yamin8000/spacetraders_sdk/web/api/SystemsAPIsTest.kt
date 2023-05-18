@@ -1,5 +1,6 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
+import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.getSystem
 import com.github.yamin8000.spacetraders_sdk.web.api.SystemsAPIs.systems
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Test
@@ -12,6 +13,13 @@ class SystemsAPIsTest : MainTest() {
     fun systems() {
         runBlocking {
             assertEquals("X1-ZA40", client.systems().map { it.symbol }.find { it == "X1-ZA40" })
+        }
+    }
+
+    @Test
+    fun getSystem() {
+        runBlocking {
+            assertEquals("X1-ZA40", client.getSystem("X1-ZA40").symbol)
         }
     }
 }

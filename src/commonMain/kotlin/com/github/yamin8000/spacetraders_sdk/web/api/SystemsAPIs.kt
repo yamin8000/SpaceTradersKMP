@@ -14,4 +14,6 @@ object SystemsAPIs {
         limit: Int = Constants.QueryParameter.LIMIT_DEFAULT,
         page: Int = Constants.QueryParameter.PAGE_DEFAULT
     ): List<System> = get(SYSTEMS) { pagingRequest(limit, page) }.data()
+
+    suspend fun GameClient.getSystem(systemSymbol: String): System = get("${SYSTEMS}/$systemSymbol").data()
 }
