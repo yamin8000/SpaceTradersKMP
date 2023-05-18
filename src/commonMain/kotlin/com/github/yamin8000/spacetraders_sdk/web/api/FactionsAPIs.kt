@@ -2,7 +2,6 @@ package com.github.yamin8000.spacetraders_sdk.web.api
 
 import com.github.yamin8000.spacetraders_sdk.model.faction.Faction
 import com.github.yamin8000.spacetraders_sdk.web.Constants
-import com.github.yamin8000.spacetraders_sdk.web.Constants.BASE_URL
 import com.github.yamin8000.spacetraders_sdk.web.GameClient
 import com.github.yamin8000.spacetraders_sdk.web.Utility.data
 import com.github.yamin8000.spacetraders_sdk.web.Utility.pagingRequest

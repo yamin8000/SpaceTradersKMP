@@ -5,7 +5,7 @@ import io.ktor.client.call.*
 import io.ktor.client.request.*
 import io.ktor.client.statement.*
 
-object Utility {
+internal object Utility {
 
     internal fun HttpRequestBuilder.pagingRequest(
         limit: Int = Constants.QueryParameter.LIMIT_DEFAULT,

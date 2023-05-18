@@ -6,8 +6,13 @@ import io.ktor.client.request.*
 import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 
+/**
+ * Wrapper around [io.ktor.client.HttpClient],
+ *
+ * This client makes requests prefixed by [baseApiUrl] parameter.
+ */
 class GameClient(
-    private val baseUrl: String = Constants.BASE_URL,
+    private val baseApiUrl: String = Constants.BASE_API_URL,
     private val token: String? = null
 ) {
     private val _client = HttpClient {
@@ -36,7 +41,7 @@ class GameClient(
     suspend fun request(
         endpoint: String,
         block: HttpRequestBuilder.() -> Unit = {}
-    ) = _client.request("$baseUrl$endpoint", block)
+    ) = _client.request("$baseApiUrl$endpoint", block)
 
     suspend fun authorizedGet(endpoint: String) = authorizedRequest(endpoint, HttpMethod.Get)
 
@@ -51,8 +56,7 @@ class GameClient(
         method: HttpMethod,
         block: HttpRequestBuilder.() -> Unit = {
             this.method = method
-            if (token != null)
-                bearerAuth(token)
+            bearerAuth(requireNotNull(token))
         }
-    ) = _client.request("$baseUrl$endpoint", block)
+    ) = _client.request("$baseApiUrl$endpoint", block)
 }
