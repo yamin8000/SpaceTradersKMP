@@ -6,7 +6,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Status(
     val status: String,
-    val version: LocalDate,
+    val version: String,
+    val resetDate: LocalDate,
     val description: String,
     val stats: Map<String, Int>,
     val leaderboards: Leaderboards,
