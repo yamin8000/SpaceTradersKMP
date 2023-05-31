@@ -6,5 +6,8 @@ import com.github.yamin8000.spacetraders_sdk.web.Utility.data
 
 object AgentsAPIs {
 
+    /**
+     * Fetch your agent's details.
+     */
     suspend fun GameClient.myAgent(): Agent = authorizedGet("my/agent").data()
 }
