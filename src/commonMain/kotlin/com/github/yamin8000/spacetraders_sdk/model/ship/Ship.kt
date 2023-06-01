@@ -4,7 +4,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class Ship(
-    val symbol: String,
-    val registration: ShipRegistration,
-    val nav: ShipNav
+    val x: Int
 )
