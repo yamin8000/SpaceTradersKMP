@@ -60,7 +60,7 @@ kotlin {
         val jvmTest by getting {
             dependsOn(jvmMain)
             dependencies {
-                implementation("org.junit.jupiter:junit-jupiter:5.9.3")
+                implementation("org.junit.jupiter:junit-jupiter:5.10.0")
             }
         }
         val jsMain by getting
