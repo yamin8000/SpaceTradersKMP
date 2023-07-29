@@ -36,10 +36,10 @@ kotlin {
 
 
     sourceSets {
-        val ktorVersion = "2.3.1"
+        val ktorVersion = "2.3.2"
         val commonMain by getting {
             dependencies {
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
@@ -60,7 +60,7 @@ kotlin {
         val jvmTest by getting {
             dependsOn(jvmMain)
             dependencies {
-                implementation("org.junit.jupiter:junit-jupiter:5.9.3")
+                implementation("org.junit.jupiter:junit-jupiter:5.10.0")
             }
         }
         val jsMain by getting
