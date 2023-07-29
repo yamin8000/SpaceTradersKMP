@@ -3,11 +3,11 @@ package com.github.yamin8000.spacetraders_sdk.model.ship
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ShipReactor(
-    val symbol: ShipReactorSymbol,
+data class ShipEngine(
+    val symbol: ShipEngineSymbol,
     val name: String,
     val description: String,
     val condition: Condition,
-    val powerOutput: Int,
+    val speed: Int,
     val requirements: ShipRequirements
 )

@@ -8,4 +8,4 @@ import kotlin.jvm.JvmInline
  */
 @Serializable
 @JvmInline
-value class ShipCondition(val value: Int)
+value class Condition(val value: Int)
