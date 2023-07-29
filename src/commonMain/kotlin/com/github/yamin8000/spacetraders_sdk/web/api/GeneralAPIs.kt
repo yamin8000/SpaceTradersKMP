@@ -1,7 +1,7 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
 import com.github.yamin8000.spacetraders_sdk.model.status.Status
-import com.github.yamin8000.spacetraders_sdk.model.general.RegisterRequestBody
+import com.github.yamin8000.spacetraders_sdk.model.general.RegisterRequest
 import com.github.yamin8000.spacetraders_sdk.model.general.RegisterResponse
 import com.github.yamin8000.spacetraders_sdk.web.Constants.BASE
 import com.github.yamin8000.spacetraders_sdk.web.GameClient
@@ -33,6 +33,6 @@ object GeneralAPIs {
      * a command ship with a jump drive, and one hundred thousand credits.
      */
     suspend fun GameClient.register(
-        registerRequestBody: RegisterRequestBody
-    ): RegisterResponse = client.post(BASE / "register") { setBody(registerRequestBody) }.data()
+        registerRequest: RegisterRequest
+    ): RegisterResponse = client.post(BASE / "register") { setBody(registerRequest) }.data()
 }
