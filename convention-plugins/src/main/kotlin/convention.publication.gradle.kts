@@ -63,6 +63,7 @@ publishing {
             name.set("SpaceTraders KMP")
             description.set("SpaceTraders API wrapper for Kotlin Multiplatform ")
             url.set("https://github.com/yamin8000/SpaceTradersKMP")
+            inceptionYear.set("2023")
 
             licenses {
                 license {
@@ -79,6 +80,9 @@ publishing {
             }
             scm {
                 url.set("https://github.com/yamin8000/SpaceTradersKMP.git")
+            }
+            issueManagement {
+                url.set("https://github.com/yamin8000/SpaceTradersKMP/issues")
             }
         }
     }
