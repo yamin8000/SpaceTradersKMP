@@ -1,0 +1,11 @@
+package com.github.yamin8000.spacetraders_sdk.model.ship
+
+import kotlinx.serialization.Serializable
+
+@Serializable
+data class Shipyard(
+    val symbol: String,
+    val shipTypes: List<ShipType>,
+    val transactions: List<ShipyardTransaction>,
+    val ships: List<Ship>
+)
