@@ -6,6 +6,6 @@ import kotlinx.serialization.Serializable
 data class Shipyard(
     val symbol: String,
     val shipTypes: List<ShipType>,
-    val transactions: List<ShipyardTransaction>,
-    val ships: List<Ship>
+    val transactions: List<ShipyardTransaction>?,
+    val ships: List<ShipyardShip>?
 )

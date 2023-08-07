@@ -7,7 +7,7 @@ data class ShipEngine(
     val symbol: ShipEngineSymbol,
     val name: String,
     val description: String,
-    val condition: Condition,
+    val condition: Condition?,
     val speed: Int,
     val requirements: ShipRequirements
 )

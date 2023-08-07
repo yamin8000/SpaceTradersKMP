@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ShipyardShip(
-    val type: ShipType,
+    val type: ShipType?,
     val name: String,
     val description: String,
     val purchasePrice: Int,
