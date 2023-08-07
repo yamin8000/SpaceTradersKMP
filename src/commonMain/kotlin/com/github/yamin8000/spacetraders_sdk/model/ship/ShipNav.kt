@@ -8,5 +8,5 @@ data class ShipNav(
     val waypointSymbol: String,
     val route: ShipNavRoute,
     val status: ShipNavStatus,
-    val flightMode: ShipNavFlightMode
+    val flightMode: ShipNavFlightMode = ShipNavFlightMode.CRUISE
 )
