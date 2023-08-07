@@ -5,8 +5,8 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class ShipModule(
     val symbol: ShipModuleSymbol,
-    val capacity: Int,
-    val range: Int,
+    val capacity: Int?,
+    val range: Int?,
     val name: String,
     val description: String,
     val requirements: ShipRequirements
