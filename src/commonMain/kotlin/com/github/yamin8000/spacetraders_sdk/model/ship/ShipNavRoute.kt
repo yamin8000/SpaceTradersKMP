@@ -1,6 +1,5 @@
 package com.github.yamin8000.spacetraders_sdk.model.ship
 
-import kotlinx.datetime.LocalDate
 import kotlinx.datetime.LocalDateTime
 import kotlinx.serialization.Serializable
 
