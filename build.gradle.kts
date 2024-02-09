@@ -20,11 +20,13 @@ kotlin {
             useJUnitPlatform()
         }
     }
+
     js(IR) {
         browser {
 
         }
     }
+
     val hostOs = System.getProperty("os.name")
     val isMingwX64 = hostOs.startsWith("Windows")
     val nativeTarget = when {
@@ -34,9 +36,8 @@ kotlin {
         else -> throw GradleException("Host OS is not supported in Kotlin/Native.")
     }
 
-
     sourceSets {
-        val ktorVersion = "2.3.5"
+        val ktorVersion = "2.3.8"
         val commonMain by getting {
             dependencies {
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
