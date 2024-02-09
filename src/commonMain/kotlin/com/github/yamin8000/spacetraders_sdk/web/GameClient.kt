@@ -43,6 +43,11 @@ class GameClient(
         block: HttpRequestBuilder.() -> Unit = {}
     ) = _client.request("$baseApiUrl$endpoint", block)
 
+    suspend fun rawRequest(
+        url: String,
+        block: HttpRequestBuilder.() -> Unit = {}
+    ) = _client.request(url, block)
+
     suspend fun authorizedGet(endpoint: String) = authorizedRequest(endpoint, HttpMethod.Get)
 
     suspend inline fun <reified T> authorizedPost(
