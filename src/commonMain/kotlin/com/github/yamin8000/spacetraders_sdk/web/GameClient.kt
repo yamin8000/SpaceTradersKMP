@@ -34,6 +34,7 @@ class GameClient(
         body: T,
         noinline block: HttpRequestBuilder.() -> Unit = {
             this.method = HttpMethod.Post
+            header(HttpHeaders.ContentType, ContentType.Application.Json)
             setBody(body)
         }
     ) = request(endpoint, block)

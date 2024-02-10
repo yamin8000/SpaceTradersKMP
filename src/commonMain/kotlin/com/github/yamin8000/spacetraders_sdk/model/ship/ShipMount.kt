@@ -9,7 +9,8 @@ import kotlinx.serialization.Serializable
 data class ShipMount(
     val symbol: ShipMountSymbol,
     val name: String,
-    val description: String?,
-    val strength: Int?,
-    val deposits: List<Deposit>?
+    val description: String? = null,
+    val strength: Int? = null,
+    val deposits: List<Deposit>? = null,
+    val requirements: ShipRequirements? = null
 )

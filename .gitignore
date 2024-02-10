@@ -1,3 +1,4 @@
 /.gradle/
 /.idea/
 /build/
+/src/jvmTest/kotlin/com/github/yamin8000/spacetraders_sdk/web/api/Main.kt

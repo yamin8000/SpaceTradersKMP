@@ -4,7 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ShipRequirements(
-    val power: Int?,
-    val crew: Int?,
-    val slots: Int?
+    val power: Int? = null,
+    val crew: Int? = null,
+    val slots: Int? = null
 )

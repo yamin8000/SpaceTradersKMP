@@ -1,12 +1,13 @@
 package com.github.yamin8000.spacetraders_sdk.web.api
 
-import com.github.yamin8000.spacetraders_sdk.model.general.RegisterRequest
-import com.github.yamin8000.spacetraders_sdk.model.general.RegisterResponse
+import com.github.yamin8000.spacetraders_sdk.model.api.ApiResponse
+import com.github.yamin8000.spacetraders_sdk.model.RegisterRequest
+import com.github.yamin8000.spacetraders_sdk.model.RegisterResponse
 import com.github.yamin8000.spacetraders_sdk.model.status.Status
 import com.github.yamin8000.spacetraders_sdk.web.Constants.BASE
+import com.github.yamin8000.spacetraders_sdk.web.Constants.BASE_API_URL
 import com.github.yamin8000.spacetraders_sdk.web.GameClient
-import com.github.yamin8000.spacetraders_sdk.web.Utility.data
-import com.github.yamin8000.spacetraders_sdk.web.Utility.div
+import com.github.yamin8000.spacetraders_sdk.web.Utility.response
 import io.ktor.client.call.*
 import io.ktor.client.statement.*
 
@@ -19,7 +20,7 @@ object GeneralAPIs {
     /**
      * Returns the status of the game server.
      */
-    suspend fun GameClient.status(): Status = rawRequest("$BASE/v2").body()
+    suspend fun GameClient.status(): Status = rawRequest(BASE_API_URL).body()
 
     /**
      * Creates a new agent and ties it to a temporary Account.
@@ -33,5 +34,5 @@ object GeneralAPIs {
      */
     suspend fun GameClient.register(
         registerRequest: RegisterRequest
-    ): RegisterResponse = post(BASE / "register", registerRequest).data()
+    ): ApiResponse<RegisterResponse?> = post("register", registerRequest).response()
 }

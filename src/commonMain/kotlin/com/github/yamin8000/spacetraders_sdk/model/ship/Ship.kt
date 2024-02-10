@@ -11,6 +11,7 @@ data class Ship(
     val frame: ShipFrame,
     val reactor: ShipReactor,
     val engine: ShipEngine,
+    val cooldown: ShipCooldown,
     val modules: List<ShipModule>,
     val mounts: List<ShipMount>,
     val cargo: ShipCargo,

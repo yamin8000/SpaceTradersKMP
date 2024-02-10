@@ -6,5 +6,5 @@ import kotlinx.serialization.Serializable
 data class ShipFuel(
     val current: Int,
     val capacity: Int,
-    val consumed: ShipFuelConsumption?
+    val consumed: ShipFuelConsumption? = null
 )

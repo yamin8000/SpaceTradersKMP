@@ -1,4 +1,4 @@
-package com.github.yamin8000.spacetraders_sdk.model.general
+package com.github.yamin8000.spacetraders_sdk.model.api
 
 import kotlinx.serialization.Serializable
 

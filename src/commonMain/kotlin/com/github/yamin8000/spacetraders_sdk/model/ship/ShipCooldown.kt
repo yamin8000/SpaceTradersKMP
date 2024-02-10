@@ -4,10 +4,9 @@ import kotlinx.datetime.Instant
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ShipyardTransaction(
-    val waypointSymbol: String,
+data class ShipCooldown(
     val shipSymbol: String,
-    val price: Int,
-    val agentSymbol: String,
-    val timestamp: Instant
+    val totalSeconds: Int,
+    val remainingSeconds: Int,
+    val expiration: Instant? = null,
 )

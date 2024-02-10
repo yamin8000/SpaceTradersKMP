@@ -12,14 +12,14 @@ class FactionsAPIsTest : MainTest() {
     @Test
     fun factions() {
         runBlocking {
-            assertEquals(1, client.factions(limit = 1).size)
+            assertEquals(1, client.factions(limit = 1).data?.size)
         }
     }
 
     @Test
     fun getFaction() {
         runBlocking {
-            assertEquals("COSMIC", client.getFaction("COSMIC").symbol)
+            assertEquals("COSMIC", client.getFaction("COSMIC").data?.symbol)
         }
     }
 }

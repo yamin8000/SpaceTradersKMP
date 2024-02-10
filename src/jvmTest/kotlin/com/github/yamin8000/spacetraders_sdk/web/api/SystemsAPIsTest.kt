@@ -18,44 +18,50 @@ class SystemsAPIsTest : MainTest() {
     @Test
     fun systems() {
         runBlocking {
-            assertEquals(TEST_SYSTEM, client.systems().map { it.symbol }.find { it == TEST_SYSTEM })
+            assertEquals(TEST_SYSTEM, client.systems().data?.map { it.symbol }?.find { it == TEST_SYSTEM })
         }
     }
 
     @Test
     fun getSystem() {
         runBlocking {
-            assertEquals(TEST_SYSTEM, client.getSystem(TEST_SYSTEM).symbol)
+            assertEquals(TEST_SYSTEM, client.getSystem(TEST_SYSTEM).data?.symbol)
         }
     }
 
     @Test
     fun waypointsWithSystemSymbol() {
         runBlocking {
-            assertEquals(TEST_SYSTEM, client.waypoints(TEST_SYSTEM).map { it.systemSymbol }.find { it == TEST_SYSTEM })
+            assertEquals(
+                TEST_SYSTEM,
+                client.waypoints(TEST_SYSTEM).data?.map { it.systemSymbol }?.find { it == TEST_SYSTEM }
+            )
         }
     }
 
     @Test
     fun waypointsWithSystem() {
         runBlocking {
-            val system = client.getSystem(TEST_SYSTEM)
-            assertEquals(TEST_SYSTEM, client.waypoints(system).map { it.systemSymbol }.find { it == TEST_SYSTEM })
+            val system = client.getSystem(TEST_SYSTEM).data
+            assertEquals(
+                TEST_SYSTEM,
+                client.waypoints(system!!).data?.map { it.systemSymbol }?.find { it == TEST_SYSTEM }
+            )
         }
     }
 
     @Test
     fun getWaypoint() {
         runBlocking {
-            assertEquals(TEST_SYSTEM, client.getWaypoint(TEST_SYSTEM, TEST_WAYPOINT).systemSymbol)
+            assertEquals(TEST_SYSTEM, client.getWaypoint(TEST_SYSTEM, TEST_WAYPOINT).data?.systemSymbol)
         }
     }
 
     @Test
     fun getWaypointWithSystem() {
         runBlocking {
-            val system = client.getSystem(TEST_SYSTEM)
-            assertEquals(TEST_SYSTEM, client.getWaypoint(system, TEST_WAYPOINT).systemSymbol)
+            val system = client.getSystem(TEST_SYSTEM).data
+            assertEquals(TEST_SYSTEM, client.getWaypoint(system!!, TEST_WAYPOINT).data?.systemSymbol)
         }
     }
 }

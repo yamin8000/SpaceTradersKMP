@@ -1,4 +1,4 @@
-package com.github.yamin8000.spacetraders_sdk.model.general
+package com.github.yamin8000.spacetraders_sdk.model
 
 import com.github.yamin8000.spacetraders_sdk.model.Agent
 import com.github.yamin8000.spacetraders_sdk.model.contract.Contract
@@ -12,5 +12,5 @@ data class RegisterResponse(
     val contract: Contract,
     val faction: Faction,
     val ship: Ship,
-    val token: String
+    val token: String,
 )
