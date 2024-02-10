@@ -60,19 +60,19 @@ implementation("com.github.yamin8000:SpaceTradersKMP-jvm:version")
 #### Client initialization
 
 ```kotlin
-    val client = GameClient(token = "")
+val client = GameClient(token = "")
 ```
 
 #### Register
 
 ```kotlin
-    val request = RegisterRequest(
-        faction = FactionSymbol.COSMIC,
-        symbol = "yamin",
-        email = "yamin@yahoo.com"
-    )
-    val response = client.register(request)
-    println(response.data)
+val request = RegisterRequest(
+    faction = FactionSymbol.COSMIC,
+    symbol = "yamin",
+    email = "yamin@yahoo.com"
+)
+val response = client.register(request)
+println(response.data)
 ```
 
 ## Features
