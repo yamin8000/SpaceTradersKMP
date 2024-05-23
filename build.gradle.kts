@@ -1,5 +1,5 @@
 plugins {
-    kotlin("multiplatform") version "1.9.10"
+    kotlin("multiplatform") version "1.9.24"
     kotlin("plugin.serialization") version "1.9.10"
     id("convention.publication")
 }
