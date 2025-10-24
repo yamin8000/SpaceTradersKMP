@@ -13,11 +13,6 @@ import io.ktor.client.statement.*
 
 object GeneralAPIs {
     /**
-     * Returns a simple status of the game server.
-     */
-    suspend fun GameClient.simpleStatus() = rawRequest("$BASE/game/status").bodyAsText()
-
-    /**
      * Returns the status of the game server.
      */
     suspend fun GameClient.status(): Status = rawRequest(BASE_API_URL).body()

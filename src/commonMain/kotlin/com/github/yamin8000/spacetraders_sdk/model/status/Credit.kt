@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class Credit(
     val agentSymbol: String,
-    val credits: Int
+    val credits: Long
 )

@@ -10,6 +10,7 @@ data class Status(
     val resetDate: LocalDate,
     val description: String,
     val stats: Map<String, Int>,
+    val health: Map<String, String>,
     val leaderboards: Leaderboards,
     val serverResets: ServerResets,
     val announcements: List<Announcement>,
