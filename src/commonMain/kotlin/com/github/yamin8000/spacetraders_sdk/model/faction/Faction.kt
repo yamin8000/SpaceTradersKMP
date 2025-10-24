@@ -7,7 +7,7 @@ data class Faction(
     val symbol: FactionSymbol,
     val name: String,
     val description: String,
-    val headquarters: String,
+    val headquarters: String?,
     val traits: List<FactionTrait>,
     val isRecruiting: Boolean,
 )
