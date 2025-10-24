@@ -47,23 +47,28 @@ kotlin {
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
             }
         }
+
         val commonTest by getting {
             dependencies {
                 implementation(kotlin("test"))
             }
         }
+
         val jvmMain by getting {
             dependsOn(commonMain)
             dependencies {
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
+                implementation("org.jetbrains.kotlin:kotlin-stdlib:2.2.21")
             }
         }
+
         val jvmTest by getting {
             dependsOn(jvmMain)
             dependencies {
                 implementation("org.junit.jupiter:junit-jupiter:5.10.2")
             }
         }
+
         val jsMain by getting
         val jsTest by getting
         val nativeMain by getting

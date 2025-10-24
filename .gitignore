@@ -3,3 +3,5 @@
 /build/
 /src/jvmTest/kotlin/com/github/yamin8000/spacetraders_sdk/web/api/Main.kt
 /local.properties
+/src/commonDebug/
+/src/jvmMain/kotlin/Main.kt
