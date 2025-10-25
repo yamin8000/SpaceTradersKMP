@@ -8,16 +8,11 @@ This library is mainly intended to be used for Kotlin Multiplatform.
 
 ## Build Compatibility
 
-### JVM
-
-> [!note]
-> JVM Toolchain Version: 17
-
 ## Usage
 
 > [!tip]
 > Check [latest](https://repo1.maven.org/maven2/com/github/yamin8000/SpaceTradersKMP/maven-metadata.xml) version from
-> Maven Repository or [here](https://central.sonatype.com/artifact/com.github.yamin8000/SpaceTradersKMP).
+> Maven Repository or [here](https://central.sonatype.com/artifact/io.github.yamin8000/SpaceTradersKMP).
 
 ### Install
 
@@ -26,7 +21,7 @@ This library is mainly intended to be used for Kotlin Multiplatform.
 ##### Gradle Kotlin DSL
 
 ```kotlin
-implementation("com.github.yamin8000:SpaceTradersKMP:version")
+implementation("io.github.yamin8000:SpaceTradersKMP:version")
 ```
 
 #### JVM
@@ -34,13 +29,13 @@ implementation("com.github.yamin8000:SpaceTradersKMP:version")
 ##### Gradle Groovy DSL
 
 ```groovy
-implementation group: 'com.github.yamin8000', name: 'SpaceTradersKMP-jvm', version: 'version'
+implementation group: 'io.github.yamin8000', name: 'SpaceTradersKMP-jvm', version: 'version'
 ```
 
 ##### Gradle Kotlin DSL
 
 ```kotlin
-implementation("com.github.yamin8000:SpaceTradersKMP-jvm:version")
+implementation("io.github.yamin8000:SpaceTradersKMP-jvm:version")
 ```
 
 ##### Maven
@@ -48,7 +43,7 @@ implementation("com.github.yamin8000:SpaceTradersKMP-jvm:version")
 ```xml
 
 <dependency>
-    <groupId>com.github.yamin8000</groupId>
+    <groupId>io.github.yamin8000</groupId>
     <artifactId>SpaceTradersKMP</artifactId>
     <version>version</version>
 </dependency>
