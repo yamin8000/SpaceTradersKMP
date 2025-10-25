@@ -1,10 +1,6 @@
-# SpaceTradersKMP
+# SpaceTraders_SDK
 
-SpaceTradersKMP is an API wrapper for SpaceTraders game in Kotlin Multiplatform.
-
-## Preface
-
-This library is mainly intended to be used for Kotlin Multiplatform.
+SpaceTraders_SDK is an API wrapper for SpaceTraders game in Android.
 
 ## Build Compatibility
 
