@@ -1,5 +1,6 @@
 package io.github.yamin8000.spacetraders_sdk.model.status
 
+import io.github.yamin8000.spacetraders_sdk.model.utils.LocalDateSerializer
 import kotlinx.serialization.Serializable
 import java.time.LocalDate
 
@@ -7,6 +8,7 @@ import java.time.LocalDate
 data class Status(
     val status: String,
     val version: String,
+    @Serializable(with = LocalDateSerializer::class)
     val resetDate: LocalDate,
     val description: String,
     val stats: Map<String, Int>,

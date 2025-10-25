@@ -1,11 +1,12 @@
 package io.github.yamin8000.spacetraders_sdk.model.status
 
-import kotlin.time.Instant
+import io.github.yamin8000.spacetraders_sdk.model.utils.InstantSerializer
+import java.time.Instant
 import kotlinx.serialization.Serializable
-import kotlin.time.ExperimentalTime
 
 @Serializable
-data class ServerResets @OptIn(ExperimentalTime::class) constructor(
+data class ServerResets (
+    @Serializable(with = InstantSerializer::class)
     val next: Instant,
     val frequency: String
 )

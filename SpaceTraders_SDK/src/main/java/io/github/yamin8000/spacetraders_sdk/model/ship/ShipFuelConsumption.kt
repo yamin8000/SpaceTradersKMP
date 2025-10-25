@@ -1,11 +1,12 @@
 package io.github.yamin8000.spacetraders_sdk.model.ship
 
-import kotlin.time.Instant
+import io.github.yamin8000.spacetraders_sdk.model.utils.InstantSerializer
+import java.time.Instant
 import kotlinx.serialization.Serializable
-import kotlin.time.ExperimentalTime
 
 @Serializable
-data class ShipFuelConsumption @OptIn(ExperimentalTime::class) constructor(
+data class ShipFuelConsumption (
     val amount: Int,
+    @Serializable(with = InstantSerializer::class)
     val timestamp: Instant
 )

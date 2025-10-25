@@ -1,11 +1,11 @@
 package io.github.yamin8000.spacetraders_sdk.model.market
 
-import kotlin.time.Instant
+import io.github.yamin8000.spacetraders_sdk.model.utils.InstantSerializer
+import java.time.Instant
 import kotlinx.serialization.Serializable
-import kotlin.time.ExperimentalTime
 
 @Serializable
-data class MarketTransaction @OptIn(ExperimentalTime::class) constructor(
+data class MarketTransaction(
     val waypointSymbol: String,
     val shipSymbol: String,
     val tradeSymbol: String,
@@ -13,5 +13,6 @@ data class MarketTransaction @OptIn(ExperimentalTime::class) constructor(
     val units: Int,
     val pricePerUnit: Int,
     val totalPrice: Int,
+    @Serializable(with = InstantSerializer::class)
     val timestamp: Instant
 )

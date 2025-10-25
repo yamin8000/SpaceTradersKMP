@@ -1,12 +1,12 @@
 package io.github.yamin8000.spacetraders_sdk.model.contract
 
 import io.github.yamin8000.spacetraders_sdk.model.faction.FactionSymbol
+import io.github.yamin8000.spacetraders_sdk.model.utils.InstantSerializer
 import kotlinx.serialization.Serializable
-import kotlin.time.ExperimentalTime
-import kotlin.time.Instant
+import java.time.Instant
 
 @Serializable
-data class Contract @OptIn(ExperimentalTime::class) constructor(
+data class Contract(
     val id: String,
     val factionSymbol: FactionSymbol,
     val type: ContractType,
@@ -14,6 +14,8 @@ data class Contract @OptIn(ExperimentalTime::class) constructor(
     val accepted: Boolean = false,
     val fulfilled: Boolean = false,
     @Deprecated("Deprecated in favor of deadlineToAccept")
+    @Serializable(with = InstantSerializer::class)
     val expiration: Instant,
+    @Serializable(with = InstantSerializer::class)
     val deadlineToAccept: Instant,
 )
